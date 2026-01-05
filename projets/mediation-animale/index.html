@@ -411,7 +411,12 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contact-form">
+                    <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="subject" value="Nouveau message - Médiation Animale">
+                        <input type="hidden" name="from_name" value="Site Médiation Animale">
+                        <input type="hidden" name="redirect" value="false">
+                        
                         <div class="form-group">
                             <label for="name">Nom complet</label>
                             <input type="text" id="name" name="name" required>
@@ -432,7 +437,7 @@
                     </form>
                     <div class="form-success" id="form-success" style="display: none;">
                         <i class="fas fa-check-circle"></i>
-                        <p>Votre message a été préparé. Veuillez cliquer sur "Envoyer" dans votre client email.</p>
+                        <p>Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.</p>
                     </div>
                 </div>
             </div>

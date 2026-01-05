@@ -53,39 +53,47 @@ window.addEventListener('scroll', () => {
 const contactForm = document.querySelector('#contact-form');
 
 if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         
-        // Récupérer les données du formulaire
         const formData = new FormData(contactForm);
-        const name = formData.get('name');
-        const email = formData.get('email');
-        const phone = formData.get('phone');
-        const message = formData.get('message');
-        
-        // Créer le mailto avec toutes les informations
-        const subject = encodeURIComponent('Demande de contact - Médiation Animale');
-        const body = encodeURIComponent(
-            `Nom: ${name}\n` +
-            `Email: ${email}\n` +
-            `Téléphone: ${phone || 'Non renseigné'}\n\n` +
-            `Message:\n${message}`
-        );
-        
-        // Ouvrir le client email avec les données pré-remplies
-        window.location.href = `mailto:buckine32@gmail.com?subject=${subject}&body=${body}`;
-        
-        // Afficher le message de confirmation
+        const submitButton = contactForm.querySelector('button[type="submit"]');
         const formSuccess = document.getElementById('form-success');
-        formSuccess.style.display = 'block';
         
-        // Réinitialiser le formulaire
-        contactForm.reset();
+        // Désactiver le bouton pendant l'envoi
+        submitButton.disabled = true;
+        submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
         
-        // Masquer le message après 5 secondes
-        setTimeout(() => {
-            formSuccess.style.display = 'none';
-        }, 5000);
+        try {
+            const response = await fetch(contactForm.action, {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            
+            if (data.success) {
+                // Masquer le formulaire et afficher le message de succès
+                contactForm.style.display = 'none';
+                formSuccess.style.display = 'block';
+                
+                // Réinitialiser le formulaire
+                contactForm.reset();
+                
+                // Réafficher le formulaire après 5 secondes
+                setTimeout(() => {
+                    contactForm.style.display = 'block';
+                    formSuccess.style.display = 'none';
+                }, 5000);
+            } else {
+                alert('Une erreur est survenue. Veuillez réessayer.');
+            }
+        } catch (error) {
+            alert('Une erreur est survenue. Veuillez réessayer ou m\'envoyer un email directement à buckine32@gmail.com');
+        } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Envoyer le message';
+        }
     });
 }
 
