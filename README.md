@@ -1,5 +1,7 @@
 # Portfolio - Beatrice Ozanne
 
+🌐 **Site en ligne** : https://bea32550.github.io/portfolio/
+
 ## 📋 Description
 
 Portfolio personnel présentant mes compétences en Intelligence Artificielle, automatisation et développement web. Ce site met en avant mes projets et mon expertise avec les outils IA modernes.
