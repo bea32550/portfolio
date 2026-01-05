@@ -361,6 +361,163 @@ body {
     font-size: 0.95rem;
 }
 
+/* Tarifs Section */
+.tarifs-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 3rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tarifs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.tarif-card {
+    background: var(--white);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    transition: all 0.3s;
+    position: relative;
+    border: 2px solid transparent;
+}
+
+.tarif-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: var(--primary-color);
+}
+
+.tarif-card.featured {
+    border: 2px solid var(--primary-color);
+    transform: scale(1.05);
+}
+
+.tarif-card.featured:hover {
+    transform: scale(1.05) translateY(-10px);
+}
+
+.tarif-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
+}
+
+.tarif-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.tarif-header h3 {
+    color: var(--dark-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.tarif-icon {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.tarif-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.tarif-price {
+    text-align: center;
+    padding: 1.5rem 0;
+    border-top: 2px solid var(--light-color);
+    border-bottom: 2px solid var(--light-color);
+    margin-bottom: 1.5rem;
+}
+
+.tarif-price .price {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.tarif-price .duration {
+    display: block;
+    color: var(--text-color);
+    font-size: 0.95rem;
+}
+
+.tarif-features {
+    list-style: none;
+}
+
+.tarif-features li {
+    padding: 0.8rem 0;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tarif-features li i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.tarifs-note {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: var(--shadow);
+}
+
+.tarifs-note p {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.tarifs-note ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.tarifs-note ul li {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    position: relative;
+    padding-left: 20px;
+}
+
+.tarifs-note ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
 /* Contact Section */
 .contact-content {
     display: grid;
