@@ -243,3 +243,168 @@ playAgainBtn.addEventListener('click', restartGame);
 
 // Initialiser le jeu
 createCards();
+
+// Quiz
+const quizQuestions = [
+    {
+        question: "Qu'est-ce que la médiation animale ?",
+        options: [
+            "Une méthode de dressage d'animaux",
+            "Une thérapie utilisant la relation humain-animal pour le bien-être",
+            "Un sport équestre",
+            "Une formation pour devenir vétérinaire"
+        ],
+        correct: 1
+    },
+    {
+        question: "Quel est un bienfait reconnu de la médiation animale ?",
+        options: [
+            "Augmentation du stress",
+            "Réduction de l'anxiété et amélioration de l'humeur",
+            "Développement de phobies",
+            "Isolation sociale"
+        ],
+        correct: 1
+    },
+    {
+        question: "Pour qui la médiation animale est-elle bénéfique ?",
+        options: [
+            "Uniquement pour les enfants",
+            "Seulement pour les personnes âgées",
+            "Pour tous : enfants, adultes, seniors, personnes en situation de handicap",
+            "Uniquement pour les personnes en bonne santé"
+        ],
+        correct: 2
+    },
+    {
+        question: "Quel type d'animal peut être utilisé en médiation animale ?",
+        options: [
+            "Uniquement les chiens",
+            "Uniquement les chats",
+            "Divers animaux : chiens, chats, chevaux, lapins, etc.",
+            "Aucun animal domestique"
+        ],
+        correct: 2
+    },
+    {
+        question: "Quelle compétence peut être développée grâce à la médiation animale ?",
+        options: [
+            "La confiance en soi et les compétences sociales",
+            "La méfiance envers les autres",
+            "L'agressivité",
+            "L'isolement"
+        ],
+        correct: 0
+    }
+];
+
+let currentQuestion = 0;
+let score = 0;
+let selectedAnswer = null;
+
+const questionText = document.getElementById('question-text');
+const quizOptions = document.getElementById('quiz-options');
+const nextBtn = document.getElementById('next-btn');
+const progressBar = document.getElementById('progress-bar');
+const questionNumber = document.getElementById('question-number');
+const quizScore = document.getElementById('quiz-score');
+const quizCard = document.getElementById('quiz-card');
+const quizResult = document.getElementById('quiz-result');
+const restartQuizBtn = document.getElementById('restart-quiz-btn');
+
+function loadQuestion() {
+    const question = quizQuestions[currentQuestion];
+    questionText.textContent = question.question;
+    quizOptions.innerHTML = '';
+    selectedAnswer = null;
+    nextBtn.style.display = 'none';
+    
+    const letters = ['A', 'B', 'C', 'D'];
+    question.options.forEach((option, index) => {
+        const optionDiv = document.createElement('div');
+        optionDiv.className = 'quiz-option';
+        optionDiv.innerHTML = `
+            <span class="option-letter">${letters[index]}</span>
+            <span>${option}</span>
+        `;
+        optionDiv.addEventListener('click', () => selectAnswer(index, optionDiv));
+        quizOptions.appendChild(optionDiv);
+    });
+    
+    updateProgress();
+}
+
+function selectAnswer(index, optionElement) {
+    if (selectedAnswer !== null) return;
+    
+    selectedAnswer = index;
+    const question = quizQuestions[currentQuestion];
+    const allOptions = document.querySelectorAll('.quiz-option');
+    
+    allOptions.forEach(opt => opt.classList.add('disabled'));
+    
+    if (index === question.correct) {
+        optionElement.classList.add('correct');
+        score++;
+        quizScore.textContent = `🎯 Score: ${score}`;
+    } else {
+        optionElement.classList.add('wrong');
+        allOptions[question.correct].classList.add('correct');
+    }
+    
+    nextBtn.style.display = 'inline-flex';
+}
+
+function nextQuestion() {
+    currentQuestion++;
+    
+    if (currentQuestion < quizQuestions.length) {
+        loadQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function updateProgress() {
+    const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
+    progressBar.style.width = `${progress}%`;
+    questionNumber.textContent = `Question ${currentQuestion + 1}/${quizQuestions.length}`;
+}
+
+function showResults() {
+    quizCard.style.display = 'none';
+    quizResult.style.display = 'block';
+    
+    const finalScore = document.getElementById('final-score');
+    const resultMessage = document.getElementById('result-message');
+    const correctAnswers = document.getElementById('correct-answers');
+    const wrongAnswers = document.getElementById('wrong-answers');
+    
+    finalScore.textContent = score;
+    correctAnswers.textContent = score;
+    wrongAnswers.textContent = quizQuestions.length - score;
+    
+    if (score === quizQuestions.length) {
+        resultMessage.textContent = "Parfait ! Vous êtes un expert de la médiation animale ! 🌟";
+    } else if (score >= quizQuestions.length * 0.6) {
+        resultMessage.textContent = "Très bien ! Vous avez de bonnes connaissances sur la médiation animale ! 👏";
+    } else {
+        resultMessage.textContent = "Pas mal ! Continuez à en apprendre davantage sur la médiation animale ! 📚";
+    }
+}
+
+function restartQuiz() {
+    currentQuestion = 0;
+    score = 0;
+    selectedAnswer = null;
+    quizScore.textContent = '🎯 Score: 0';
+    quizCard.style.display = 'block';
+    quizResult.style.display = 'none';
+    loadQuestion();
+}
+
+nextBtn.addEventListener('click', nextQuestion);
+restartQuizBtn.addEventListener('click', restartQuiz);
+
+// Initialiser le quiz
+loadQuestion();
