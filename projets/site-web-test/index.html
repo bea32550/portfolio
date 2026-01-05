@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabinet de Sexothérapie - Dr. Marie Dubois</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1>Béatrice Ozanne - Sexothérapeute</h1>
+            <ul>
+                <li><a href="#accueil">Accueil</a></li>
+                <li><a href="#a-propos">À propos</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#approche">Mon approche</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#mentions-legales">Mentions légales</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=400&fit=crop" alt="Zen et méditation">
+            </div>
+            <h2>L'Harmonie Intime Retrouvée.</h2>
+            <p>Accompagnement bienveillant et professionnel pour les difficultés sexuelles et relationnelles</p>
+            <p class="subtitle">Consultations en cabinet ou en téléconsultation - Cabinet situé à Auterrive dans le Gers</p>
+            <a href="#contact"><button>Prendre rendez-vous</button></a>
+        </section>
+
+        <section id="a-propos" class="section">
+            <h2>À propos</h2>
+            <div class="profile-image">
+                <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=600&h=300&fit=crop" alt="Mains enlacées">
+            </div>
+            <div class="about-content">
+                <p><strong>La sexothérapie</strong> est une forme de thérapie spécialisée qui s'intéresse aux difficultés d'ordre sexuel et relationnel. Elle s'adresse aux personnes seules ou en couple qui rencontrent des obstacles dans leur vie intime.</p>
+                <p>Au-delà des aspects purement physiques, la sexothérapie explore les dimensions psychologiques, émotionnelles et relationnelles de la sexualité. Elle permet de comprendre l'origine des difficultés et d'apprendre à les dépasser dans un cadre bienveillant et sans jugement.</p>
+                <p>Cette approche thérapeutique utilise la parole, l'écoute active et parfois des exercices pratiques à réaliser chez soi. L'objectif est de retrouver une vie intime épanouie, en harmonie avec ses désirs et ses valeurs, tout en respectant son rythme et celui de son partenaire.</p>
+                <div class="credentials">
+                    <p>✓ Formation en sexothérapie avec Certified Excellence</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="section">
+            <h2>Mes domaines d'intervention</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>🤝 Thérapie de couple</h3>
+                    <p>Difficultés de communication, baisse du désir, infidélité, reconstruction après une crise</p>
+                </div>
+                <div class="card">
+                    <h3>👤 Consultations individuelles</h3>
+                    <p>Troubles du désir, difficultés érectiles, vaginisme, anorgasmie, éjaculation précoce</p>
+                </div>
+                <div class="card">
+                    <h3>🌱 Développement personnel</h3>
+                    <p>Confiance en soi, image corporelle, orientation sexuelle, identité de genre</p>
+                </div>
+                <div class="card">
+                    <h3>💔 Traumatismes</h3>
+                    <p>Accompagnement après violences sexuelles, reconstruction, libération des blocages</p>
+                </div>
+                <div class="card">
+                    <h3>🔄 Transitions de vie</h3>
+                    <p>Grossesse, post-partum, ménopause, andropause, vieillissement</p>
+                </div>
+                <div class="card">
+                    <h3>💬 Éducation sexuelle</h3>
+                    <p>Questions sur la sexualité, découverte de soi, communication dans le couple</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="approche" class="section approach">
+            <h2>Mon approche thérapeutique</h2>
+            <div class="approach-image">
+                <img src="https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=1200&h=400&fit=crop" alt="Paix intérieure et méditation">
+            </div>
+            <div class="approach-content">
+                <p>Ma pratique s'inscrit dans une approche <strong>intégrative et bienveillante</strong>, combinant différentes méthodes thérapeutiques adaptées à chaque personne :</p>
+                <ul>
+                    <li><strong>Thérapie cognitivo-comportementale (TCC)</strong> : pour identifier et modifier les schémas de pensée limitants</li>
+                    <li><strong>Approche psychodynamique</strong> : pour comprendre l'origine des difficultés</li>
+                    <li><strong>Sexologie fonctionnelle</strong> : exercices pratiques et techniques corporelles</li>
+                    <li><strong>Communication non-violente</strong> : pour améliorer le dialogue dans le couple</li>
+                </ul>
+                <p class="highlight">La sexothérapie n'est pas un acte médical. Elle se base sur la parole, l'écoute et parfois des exercices à réaliser chez soi.</p>
+            </div>
+        </section>
+
+        <section id="roue" class="section roue-section">
+            <h2>La Roue de l'Intimité</h2>
+            <p class="roue-intro">Découvrez une suggestion pour enrichir votre vie intime. Tournez la roue et laissez-vous inspirer !</p>
+            
+            <div class="roue-container">
+                <div class="roue-wrapper">
+                    <div class="roue-pointer">▼</div>
+                    <canvas id="wheelCanvas" width="400" height="400"></canvas>
+                </div>
+                <button id="spinButton" class="spin-button">Tourner la roue</button>
+                <div id="roueResult" class="roue-result"></div>
+            </div>
+        </section>
+
+        <section id="quiz" class="section quiz-section">
+            <h2>Quiz : Évaluez votre bien-être intime</h2>
+            <p class="quiz-intro">Un petit quiz interactif pour réfléchir à votre épanouissement personnel. Répondez en toute honnêteté, ce quiz est anonyme.</p>
+            
+            <div id="quizContainer" class="quiz-container">
+                <div class="quiz-question active" data-question="1">
+                    <h3>Question 1/5</h3>
+                    <p>Comment évaluez-vous votre communication avec votre partenaire sur vos besoins intimes ?</p>
+                    <button class="quiz-answer" data-points="3">Excellente, nous communiquons ouvertement</button>
+                    <button class="quiz-answer" data-points="2">Correcte, mais pourrait être améliorée</button>
+                    <button class="quiz-answer" data-points="1">Difficile, j'ai du mal à exprimer mes besoins</button>
+                    <button class="quiz-answer" data-points="0">Inexistante, nous n'en parlons jamais</button>
+                </div>
+
+                <div class="quiz-question" data-question="2">
+                    <h3>Question 2/5</h3>
+                    <p>Vous sentez-vous à l'aise avec votre corps ?</p>
+                    <button class="quiz-answer" data-points="3">Oui, totalement à l'aise</button>
+                    <button class="quiz-answer" data-points="2">Plutôt à l'aise</button>
+                    <button class="quiz-answer" data-points="1">Peu à l'aise</button>
+                    <button class="quiz-answer" data-points="0">Pas du tout à l'aise</button>
+                </div>
+
+                <div class="quiz-question" data-question="3">
+                    <h3>Question 3/5</h3>
+                    <p>Prenez-vous du temps pour votre intimité et votre couple ?</p>
+                    <button class="quiz-answer" data-points="3">Régulièrement, c'est une priorité</button>
+                    <button class="quiz-answer" data-points="2">Parfois, quand c'est possible</button>
+                    <button class="quiz-answer" data-points="1">Rarement, par manque de temps</button>
+                    <button class="quiz-answer" data-points="0">Jamais ou presque</button>
+                </div>
+
+                <div class="quiz-question" data-question="4">
+                    <h3>Question 4/5</h3>
+                    <p>Comment gérez-vous le stress dans votre vie quotidienne ?</p>
+                    <button class="quiz-answer" data-points="3">Très bien, j'ai des techniques efficaces</button>
+                    <button class="quiz-answer" data-points="2">Assez bien, je m'en sors</button>
+                    <button class="quiz-answer" data-points="1">Difficilement, je suis souvent stressé(e)</button>
+                    <button class="quiz-answer" data-points="0">Très mal, je suis submergé(e)</button>
+                </div>
+
+                <div class="quiz-question" data-question="5">
+                    <h3>Question 5/5</h3>
+                    <p>Êtes-vous satisfait(e) de votre vie intime actuelle ?</p>
+                    <button class="quiz-answer" data-points="3">Oui, totalement satisfait(e)</button>
+                    <button class="quiz-answer" data-points="2">Plutôt satisfait(e)</button>
+                    <button class="quiz-answer" data-points="1">Peu satisfait(e)</button>
+                    <button class="quiz-answer" data-points="0">Pas du tout satisfait(e)</button>
+                </div>
+
+                <div id="quizResult" class="quiz-result" style="display: none;">
+                    <h3>Votre résultat</h3>
+                    <div id="resultContent"></div>
+                    <button id="restartQuiz" class="quiz-restart">Recommencer le quiz</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>Prendre rendez-vous</h2>
+            <div class="contact-info">
+                <div class="info-box">
+                    <h3>📍 Cabinet</h3>
+                    <p>Cabinet de sexothérapie<br>32550 Auterrive<br>Gers, Occitanie</p>
+                </div>
+                <div class="info-box">
+                    <h3>📞 Téléphone</h3>
+                    <p>0687036127<br>(Du lundi au vendredi<br>9h-19h)</p>
+                </div>
+                <div class="info-box">
+                    <h3>💰 Tarifs</h3>
+                    <p>Séance individuelle: 80€<br>Séance de couple: 100€<br>(Non remboursé par la Sécurité Sociale)</p>
+                </div>
+            </div>
+            <h3 class="form-title">Demande de rendez-vous</h3>
+            <form id="contactForm" action="https://formsubmit.co/buckine32@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="Nouvelle demande de rendez-vous">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="nom" placeholder="Nom et prénom *" required>
+                <input type="email" name="email" placeholder="Email *" required>
+                <input type="tel" name="telephone" placeholder="Téléphone">
+                <select name="type" required>
+                    <option value="">Type de consultation *</option>
+                    <option value="individuelle">Consultation individuelle</option>
+                    <option value="couple">Thérapie de couple</option>
+                    <option value="premiere">Première consultation</option>
+                </select>
+                <textarea name="message" placeholder="Motif de la consultation (facultatif - reste confidentiel)" rows="5"></textarea>
+                <p class="disclaimer">Toutes les informations restent strictement confidentielles et sont protégées par le secret professionnel.</p>
+                <button type="submit">Envoyer ma demande</button>
+            </form>
+        </section>
+
+        <section id="mentions-legales" class="section legal-section">
+            <h2>Mentions légales</h2>
+            <div class="legal-content">
+                <h3>Éditeur du site</h3>
+                <p>
+                    <strong>Béatrice Ozanne</strong><br>
+                    Sexothérapeute<br>
+                    Cabinet de sexothérapie<br>
+                    32550 Auterrive, Gers<br>
+                    Téléphone : 0687036127
+                </p>
+
+                <h3>Directeur de publication</h3>
+                <p>Béatrice Ozanne</p>
+
+                <h3>Hébergement</h3>
+                <p>
+                    Ce site est hébergé localement.<br>
+                    Pour tout site en ligne, indiquer les informations de l'hébergeur.
+                </p>
+
+                <h3>Activité professionnelle</h3>
+                <p>
+                    <strong>Profession :</strong> Sexothérapeute<br>
+                    <strong>Formation :</strong> Formation en sexothérapie avec Certified Excellence<br>
+                    La sexothérapie n'est pas une profession réglementée en France. Elle s'inscrit dans le cadre des thérapies brèves et de l'accompagnement thérapeutique.
+                </p>
+
+                <h3>Secret professionnel et confidentialité</h3>
+                <p>
+                    Toutes les informations échangées lors des consultations sont strictement confidentielles et protégées par le secret professionnel.
+                    Les données personnelles collectées via le formulaire de contact sont utilisées uniquement pour la prise de rendez-vous et ne sont jamais partagées avec des tiers.
+                </p>
+
+                <h3>Protection des données personnelles (RGPD)</h3>
+                <p>
+                    Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant.
+                </p>
+                <p>
+                    Pour exercer ces droits, vous pouvez nous contacter par téléphone au 0687036127 ou via le formulaire de contact.
+                </p>
+                <p>
+                    <strong>Données collectées :</strong> nom, prénom, email, téléphone, motif de consultation<br>
+                    <strong>Finalité :</strong> gestion des rendez-vous et suivi thérapeutique<br>
+                    <strong>Durée de conservation :</strong> durée légale de conservation des dossiers médicaux<br>
+                    <strong>Responsable du traitement :</strong> Béatrice Ozanne
+                </p>
+
+                <h3>Cookies</h3>
+                <p>
+                    Ce site ne collecte aucun cookie et ne procède à aucun traçage des visiteurs.
+                </p>
+
+                <h3>Propriété intellectuelle</h3>
+                <p>
+                    L'ensemble du contenu de ce site (textes, images, logos) est la propriété exclusive de Béatrice Ozanne, sauf mention contraire.
+                    Toute reproduction, même partielle, est interdite sans autorisation préalable.
+                </p>
+
+                <h3>Responsabilité</h3>
+                <p>
+                    Les informations présentes sur ce site sont données à titre indicatif. Béatrice Ozanne ne saurait être tenue responsable de l'interprétation des informations contenues sur ce site, ni des conséquences de leur utilisation.
+                </p>
+                <p>
+                    La sexothérapie est un accompagnement thérapeutique qui ne se substitue pas à un avis médical. En cas de problème de santé, il est recommandé de consulter un médecin.
+                </p>
+
+                <h3>Code de déontologie</h3>
+                <p>
+                    La pratique professionnelle de Béatrice Ozanne respecte les principes suivants :
+                </p>
+                <ul>
+                    <li>Respect de la dignité et de l'intégrité des personnes</li>
+                    <li>Confidentialité absolue</li>
+                    <li>Non-jugement</li>
+                    <li>Bienveillance et écoute active</li>
+                    <li>Refus de toute discrimination</li>
+                    <li>Formation continue</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Béatrice Ozanne - Sexothérapeute | Cabinet de Sexothérapie à Auterrive dans le Gers</p>
+        <p class="legal">Secret professionnel - Confidentialité absolue - N° ADELI: 75xxxxxxx</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
