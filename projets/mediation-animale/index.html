@@ -22,6 +22,7 @@
                 <li><a href="#bienfaits">Bienfaits</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#tarifs">Tarifs</a></li>
+                <li><a href="#jeu">Jeu</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="burger">
@@ -278,6 +279,49 @@
                     <li>Première séance découverte à tarif réduit sur demande</li>
                     <li>Déplacements inclus dans un rayon de 20 km</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Jeu -->
+    <section id="jeu" class="section">
+        <div class="container">
+            <h2 class="section-title">Jeu de Mémoire des Animaux</h2>
+            <p class="jeu-intro">Testez votre mémoire avec ce jeu amusant ! Retrouvez les paires d'animaux.</p>
+            
+            <div class="game-container">
+                <div class="game-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-stopwatch"></i>
+                        <span>Temps: <strong id="timer">0:00</strong></span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-hand-pointer"></i>
+                        <span>Coups: <strong id="moves">0</strong></span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>Paires: <strong id="pairs">0/8</strong></span>
+                    </div>
+                </div>
+                
+                <div class="memory-game" id="memory-game">
+                    <!-- Les cartes seront générées par JavaScript -->
+                </div>
+                
+                <button class="btn-restart" id="restart-btn">
+                    <i class="fas fa-redo"></i> Nouvelle Partie
+                </button>
+            </div>
+            
+            <div class="game-message" id="game-message">
+                <div class="message-content">
+                    <i class="fas fa-trophy"></i>
+                    <h3>Bravo ! 🎉</h3>
+                    <p>Vous avez trouvé toutes les paires !</p>
+                    <p class="final-stats"></p>
+                    <button class="btn-play-again" id="play-again-btn">Rejouer</button>
+                </div>
             </div>
         </div>
     </section>
